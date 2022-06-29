@@ -81,6 +81,18 @@ void printRoot2LeafPaths(Node * root,vector<int> &path){
 
 }
 
+void LevelPrintOrder(Node* root)
+{
+  if(root == NULL)
+  {
+    return;
+  }
+  vector<int> que;
+  
+}
+
+
+
 
 
 int main(){
@@ -95,8 +107,8 @@ int main(){
 	postOrder(root);
 	cout<<endl;
 
-	vector<int> path;
-	printRoot2LeafPaths(root,path);
+	// vector<int> path;
+	// printRoot2LeafPaths(root,path);
 
 	return 0;
 }
