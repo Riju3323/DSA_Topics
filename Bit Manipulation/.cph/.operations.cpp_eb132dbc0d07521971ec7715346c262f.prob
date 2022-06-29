@@ -1,0 +1,1 @@
+{"name":"Local: operations","url":"c:\\Users\\admin\\Documents\\GitHub\\CPP_DSA_Archive\\Bit Manipulation\\operations.cpp","tests":[{"id":1655983512923,"input":"10 5 2","output":"1010\n101\n10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\admin\\Documents\\GitHub\\CPP_DSA_Archive\\Bit Manipulation\\operations.cpp","group":"local","local":true}
