@@ -1,8 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-//Input : 1 2 4 -1 -1 5 7 -1 -1 -1 3 -1 6 -1 -1
-
 class Node {
   public:
   int data;
@@ -16,28 +13,26 @@ class Node {
   }
 };
 
-Node* buildTree(){
-
+Node* buildt(){
 	int d;
 	cin>>d;
-
 	if(d==-1){
 		return NULL;
 	}
 
 	Node* n = new Node(d);
-	n->left = buildTree();
-	n->right = buildTree();
+	n->left = buildt();
+	n->right = buildt();
 	return n;
 }
 
-void printPreorder(Node *root){
+void preorder(Node *root){
 	if(root==NULL){
 		return;
 	}
 	cout << root->data <<" ";
-	printPreorder(root->left);
-	printPreorder(root->right);
+ preorder(root->left);
+ preorder(root->right);
 }
 void printInorder(Node *root){
 	if(root==NULL){
@@ -57,58 +52,61 @@ void postOrder(Node * root){
 	cout << root->data <<" ";
 }
 
-void printRoot2LeafPaths(Node * root,vector<int> &path){
-
-	if(root==NULL){
-		return;
-	}
-
-	if(root->left==NULL and root->right==NULL){
-		for(int node:path){
-			cout<<node<<"->";
-		}
-		cout<<root->data<<"->";
-		cout<<endl;
-		return;
-	}
-
-
-	path.push_back(root->data);
-	printRoot2LeafPaths(root->left,path);
-	printRoot2LeafPaths(root->right,path);
-	path.pop_back();
-	return;
-
-}
-
 void LevelPrintOrder(Node* root)
 {
-  if(root == NULL)
-  {
-    return;
-  }
-  vector<int> que;
+	queue<Node*> q;
+	q.push(root);
+	q.push(NULL);
+
+	while(!q.empty()){
+		Node* x = q.front();
+		if(x == NULL)
+		{
+			cout<<"\n";
+			q.pop();
+			if(!q.empty())
+			{
+				q.push(NULL);
+			}
+		}
+		else {
+			q.pop();
+			cout<<x->data<<" ";
+			if(x->left)
+			{
+				q.push(x->left);
+			}
+			if(x->right)
+			{
+				q.push(x->right);
+			}
+		}
+		return;
+	}
   
 }
-
-
-
+int height(Node* root)
+{
+	if(root == NULL)
+	{
+		return 0;
+	}
+	int h1 = height(root->left);
+	int h2 = height(root->right);
+	return (max(h1,h2)+1);
+}
 
 
 int main(){
 
-	Node * root = buildTree();
-	printPreorder(root);
-	cout<<endl;
-
+	Node * root = buildt();
+  preorder(root);
+	cout<<"\n\n";
 	printInorder(root);
-	cout<<endl;
-
+	cout<<"\n\n";
 	postOrder(root);
-	cout<<endl;
-
-	// vector<int> path;
-	// printRoot2LeafPaths(root,path);
+	cout<<"\n\n";
+	cout<<height(root);
 
 	return 0;
 }
