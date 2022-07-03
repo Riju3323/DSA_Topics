@@ -44,13 +44,30 @@ Node* bstin(Node* root, int x)
 
 }
 
-
+bool searchbst(Node* root, int x)
+{
+  if(root==NULL)
+  {
+    return false;
+  }
+  if(root->x == x)
+  {
+    return true;
+  }
+  if(x<root->x)
+  {
+    return searchbst(root->left,x);
+  }
+  else {
+    return searchbst(root->right,x);
+  }
+}
 
 int main()
 {
 
 Node* root = NULL;
-int n;
+int n,z;
 cin>>n;
 int arr[n];
 for (int i = 0; i < n; i++)
@@ -63,5 +80,15 @@ for (int i = 0; i < n; i++)
     root = bstin(root, i);
   }
   printIO(root);
+  cout<<"\n";
+  cin>>z;
+  if(searchbst(root,z)==true)
+  {
+    cout<<"It's present";
+  }
+  else {
+    cout<<"It isn't present";
+  }
+
  return 0;
 }
