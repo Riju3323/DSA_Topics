@@ -1,0 +1,1 @@
+{"name":"Local: temp","url":"c:\\Users\\admin\\Documents\\GitHub\\DataStructures_Algo_CPP\\Trie\\temp.cpp","tests":[{"id":1657172179198,"input":"aa\nab\nabaa","output":"true"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\admin\\Documents\\GitHub\\DataStructures_Algo_CPP\\Trie\\temp.cpp","group":"local","local":true}
