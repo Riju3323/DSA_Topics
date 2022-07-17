@@ -20,6 +20,7 @@ int main()
 {
   int n;
   cin>>n;
-  cout<<"Currency Breakdown: " << coinchange(n);
+  cout<<"Currency Breakdown: ";
+  coinchange(n);
   return 0;
 }
