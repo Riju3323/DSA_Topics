@@ -1,6 +1,5 @@
 
 # Data Structures and Algorithms
-# Competitive Programming
 
 >Some DSA Concepts
 
