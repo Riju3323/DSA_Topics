@@ -2,8 +2,7 @@
 # Data Structures and Algorithms
 # Competitive Programming
 
-> An archive of my Data Structures and Algorithms Lessons. 
-> Some Competitive Programming Concepts and related Questions.
+>Some DSA Concepts
 
 
 ## 🛠 Languages Used:
